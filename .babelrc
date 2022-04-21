@@ -1,0 +1,7 @@
+//Añadimos un objeto con la configuración preset
+{
+    "presets": [ //arreglo con los elementos que vamos a usar
+        "@babel/preset-env", //Compila ES5 ES6 y JS moderno
+        "@babel/preset-react" //Trabaja con JSX
+    ]
+ }
