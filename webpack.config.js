@@ -2,7 +2,7 @@
 const path = require('path');//nos permite saber donde
 //está ubicado el proyecto, es decir local o en un servidor, etc
 const HtmlWebpackPlugin = require('html-webpack-plugin'); //viene del recurso que instalamos
-const MiniCssExtractPlugin = require ('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js', //punto de entrada
@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),//  resolve  dirname para saber donde nos encontramos, dist de distribution
 
         filename: 'bundle.js',  //nombre del empaquetad 
-
+        publicPath: '/'
     },
     mode: 'development', //modo desarrollo
     resolve: {
@@ -27,8 +27,8 @@ module.exports = {
                 }
             },
             {
-                test: /\.html$/, 
-                use:[
+                test: /\.html$/,
+                use: [
                     {
                         loader: 'html-loader'
                     }
@@ -38,12 +38,12 @@ module.exports = {
             {
                 // test: /\.s[ac]ss$/i,
                 test: /\.(scss|css)$/,
-                use:[
-                    "style-loader","css-loader", "sass-loader",
-                ]    
+                use: [
+                    "style-loader", "css-loader", "sass-loader",
+                ]
             }
         ]
-    }, 
+    },
     plugins: [
         new HtmlWebpackPlugin({ // debe estar importado Html Webpack plugin
             template: './public/index.html',
@@ -51,14 +51,17 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({ //plugin css y sass
             filename: '[name].css'
-        }), 
+        }),
     ],
-    devServer :{// configuración de modo desarrollo para el servidor
-        static:{
-        directory: path.join(__dirname, 'dist'),
-       },
-        compress: true,
-        port: 3000, // puerto más común
+        /* devServer: {// configuración de modo desarrollo para el servidor
+            static: {
+                directory: path.join(__dirname, 'dist'),
+            },
+            compress: true,
+            port: 3000, // puerto más común
 
-    }
+        }     //shift alt a para comentar*/
+        devServer: {
+            historyApiFallback: true,
+        }
 }
