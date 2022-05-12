@@ -3,8 +3,8 @@ import '../styles/Login.scss';
 
 const Login = () => {
     return (
-        <div className="login">
-            <div className="form-container">
+        <div className="Login">
+            <div className="Login-container">
                 <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
 
                 <h1 className="title">Create a new password</h1>
