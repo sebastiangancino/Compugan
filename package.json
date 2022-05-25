@@ -25,7 +25,7 @@
   "homepage": "https://github.com/sebastiangancino/Compugan#readme",
   "dependencies": {
     "@babel/core": "^7.17.9",
-    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.18.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "axios": "^0.27.2",
@@ -35,9 +35,9 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "webpack": "^5.72.0",
+    "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.8.1"
+    "webpack-dev-server": "^4.9.0"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
