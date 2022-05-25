@@ -15,10 +15,20 @@ const useInitialState = () =>{
         });
     };
 
+    const removeFromCart=(payload) => { // para remover productos del carrito
+        setState ({
+            ...state, 
+            cart: state.cart.filter(items => items.id !== payload.id), 
+        });
+
+    }
+
     return {
         state, 
-        addToCart
-    }
+        addToCart,
+        removeFromCart
+    } 
+    
 
 }
 export default useInitialState;
